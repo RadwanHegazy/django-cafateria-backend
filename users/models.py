@@ -31,5 +31,7 @@ class User (AbstractUser) :
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ('full_name',)
 
+    cafateria = models.ForeignKey('cafateria.Cafateria',related_name='user_cafateria',null=True,blank=True,on_delete=models.CASCADE)
+
     def __str__(self) -> str:
         return self.full_name
