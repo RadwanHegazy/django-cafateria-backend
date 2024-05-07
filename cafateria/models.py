@@ -6,7 +6,7 @@ class Cafateria (models.Model) :
     id = models.UUIDField(primary_key=True,editable=False,default=uuid4)
 
     def __str__(self) : 
-        return self.name
+        return f"{ self.name} -> {self.id}"
     
 
 class Product (models.Model) : 
@@ -14,4 +14,4 @@ class Product (models.Model) :
     price = models.FloatField(default=0)
 
     def __str__(self) -> str:
-        return self.text
+        return f'{self.text} -> {self.id}'

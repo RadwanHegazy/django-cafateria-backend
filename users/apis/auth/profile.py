@@ -8,9 +8,9 @@ class profile_view (APIView) :
     def get (self,request,**kwargs) : 
         user = request.user
         data = {
-            'full_name' : request.full_name,
-            'email' : request.email,
-            'picture' : request.picture.url,
+            'full_name' : user.full_name,
+            'email' : user.email,
+            'picture' : user.picture.url,
         }
         return Response(data,status=status.HTTP_200_OK)
         
