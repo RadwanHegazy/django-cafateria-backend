@@ -2,3 +2,4 @@ migrations
 __pycache__
 *.sqlite3
 media/user-pics/*
+media/qr-codes/*

@@ -26,7 +26,7 @@ class ViewOrdersSrz :
                     'cafateria' : i.cafateria.name,
                     'qr_path' : i.qr_path,
                 } 
-                for i in Order.objects.filter(user=self.user)
+                for i in Order.objects.filter(user=self.user,is_recived=False)
             ]
 
         data = {

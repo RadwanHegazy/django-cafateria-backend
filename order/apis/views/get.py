@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
 from ...models import Order
-from datetime import datetime,timezone
-
+# from datetime import datetime,timezone
+from django.utils.timezone import datetime
 from users.models import User
 from ..serializers import ViewOrdersSrz
 
@@ -38,6 +38,7 @@ class scan_order (APIView) :
 
         data = {
             'user_pic' : order.user.picture.url,
+            'user':order.user.full_name,
             'price' : order.product.price,
             'order' : order.product.text, 
         }
